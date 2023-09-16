@@ -15,10 +15,96 @@ public class TicToe extends javax.swing.JFrame {
 
     public int checkWinner(){
    int winner = 0;
+ int block=0;
+   if(jButton1.getText().equals("X")&&jButton2.getText().equals("X")&&jButton3.getText().equals("X")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   block=1;
+   }else if(jButton4.getText().equals("X")&&jButton5.getText().equals("X")&&jButton6.getText().equals("X")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   block=1;
+    }else if(jButton7.getText().equals("X")&&jButton8.getText().equals("X")&&jButton9.getText().equals("X")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   block=1;
+    }else if(jButton1.getText().equals("X")&&jButton4.getText().equals("X")&&jButton7.getText().equals("X")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   block=1;
+    }
+   else if(jButton2.getText().equals("X")&&jButton5.getText().equals("X")&&jButton8.getText().equals("X")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   block=1;
+    }
+   else if(jButton3.getText().equals("X")&&jButton6.getText().equals("X")&&jButton9.getText().equals("X")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   block=1;
+    }
+   else if(jButton1.getText().equals("X")&&jButton5.getText().equals("X")&&jButton9.getText().equals("X")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   block=1;
+    }
+   else if(jButton3.getText().equals("X")&&jButton5.getText().equals("X")&&jButton7.getText().equals("X")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   block=1;
+    }
+   else if (jButton1.getText().equals("O")&&jButton2.getText().equals("O")&&jButton3.getText().equals("O")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   block=1;
+   }else if(jButton4.getText().equals("O")&&jButton5.getText().equals("O")&&jButton6.getText().equals("O")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   block=1;
+    }else if(jButton7.getText().equals("O")&&jButton8.getText().equals("O")&&jButton9.getText().equals("O")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   block=1;
+    }else if(jButton1.getText().equals("O")&&jButton4.getText().equals("O")&&jButton7.getText().equals("O")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   block=1;
+    }
+   else if(jButton2.getText().equals("O")&&jButton5.getText().equals("O")&&jButton8.getText().equals("O")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   block=1;
+    }
+   else if(jButton3.getText().equals("O")&&jButton6.getText().equals("O")&&jButton9.getText().equals("O")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   block=1;
+    }
+   else if(jButton1.getText().equals("O")&&jButton5.getText().equals("O")&&jButton9.getText().equals("O")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   block=1;
+    }
+   else if(jButton3.getText().equals("O")&&jButton5.getText().equals("O")&&jButton7.getText().equals("O")){
+                   JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   block=1;
+    }
+   if (!jButton1.getText().isEmpty()
+           &&!jButton2.getText().isEmpty()&&
+           !jButton3.getText().isEmpty()&&
+           !jButton4.getText().isEmpty()&&
+           !jButton5.getText().isEmpty()&&
+           !jButton6.getText().isEmpty()&&
+           !jButton7.getText().isEmpty()&&
+           !jButton8.getText().isEmpty()&&
+           !jButton9.getText().isEmpty()){JOptionPane.showMessageDialog(this, "Draw try again");
+                            block=1;
+}
+   
+   if(block==1){
+       jButton1.setEnabled(false);
+       jButton2.setEnabled(false);
+       jButton3.setEnabled(false);
+       jButton4.setEnabled(false);
+       jButton5.setEnabled(false);
+       jButton6.setEnabled(false);
+       jButton7.setEnabled(false);
+       jButton8.setEnabled(false);
+       jButton9.setEnabled(false);
+   }
+             
+             
+   
     return winner;
     };
     public TicToe() {
         initComponents();
+        jTextField1.setEditable(false);
     }
 
     @SuppressWarnings("unchecked")
@@ -144,12 +230,12 @@ public class TicToe extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 68, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 69, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -165,6 +251,7 @@ public class TicToe extends javax.swing.JFrame {
     int cout=1;
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -179,6 +266,8 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
+         checkWinner();
+
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
@@ -193,7 +282,7 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
-//          checkWinner();
+          checkWinner();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
@@ -208,6 +297,7 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
+          checkWinner();
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
@@ -222,10 +312,7 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        
-        
-
+        checkWinner();
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -240,6 +327,7 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
+          checkWinner();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -254,6 +342,7 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
+          checkWinner();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -268,6 +357,7 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
+          checkWinner();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -282,6 +372,7 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
+          checkWinner();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
@@ -296,6 +387,7 @@ public class TicToe extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
         }
+           checkWinner();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**
