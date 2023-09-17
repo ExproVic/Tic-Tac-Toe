@@ -22,63 +22,80 @@ int counter =0;
    if(jButton1.getText().equals("X")&&jButton2.getText().equals("X")&&jButton3.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
    }else if(jButton4.getText().equals("X")&&jButton5.getText().equals("X")&&jButton6.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }else if(jButton7.getText().equals("X")&&jButton8.getText().equals("X")&&jButton9.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }else if(jButton1.getText().equals("X")&&jButton4.getText().equals("X")&&jButton7.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if(jButton2.getText().equals("X")&&jButton5.getText().equals("X")&&jButton8.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if(jButton3.getText().equals("X")&&jButton6.getText().equals("X")&&jButton9.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if(jButton1.getText().equals("X")&&jButton5.getText().equals("X")&&jButton9.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if(jButton3.getText().equals("X")&&jButton5.getText().equals("X")&&jButton7.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if (jButton1.getText().equals("O")&&jButton2.getText().equals("O")&&jButton3.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
    }else if(jButton4.getText().equals("O")&&jButton5.getText().equals("O")&&jButton6.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }else if(jButton7.getText().equals("O")&&jButton8.getText().equals("O")&&jButton9.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }else if(jButton1.getText().equals("O")&&jButton4.getText().equals("O")&&jButton7.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if(jButton2.getText().equals("O")&&jButton5.getText().equals("O")&&jButton8.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if(jButton3.getText().equals("O")&&jButton6.getText().equals("O")&&jButton9.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if(jButton1.getText().equals("O")&&jButton5.getText().equals("O")&&jButton9.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    else if(jButton3.getText().equals("O")&&jButton5.getText().equals("O")&&jButton7.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
+                   OnAI.setEnabled(true);
     }
    if(counter==9&&block==0){
         JOptionPane.showMessageDialog(this, "Draw try again!");
+        OnAI.setEnabled(true);
     }
   if(block==1){
        jButton1.setEnabled(false);
@@ -178,17 +195,17 @@ int counter =0;
         }
         }
         
-        checkWinner();}
-        
-        System.out.println(stopAI);
-        
+        checkWinner();}      
         return 1;
     }
     public TicToe() {
         initComponents();
         jTextField1.setEditable(false);
     }
-
+public int blockAIbtn(){
+     OnAI.setEnabled(false);
+    return 1;
+}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -377,6 +394,7 @@ int counter =0;
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
+        blockAIbtn();
            if(swap==1){
             if(jButton5.getText().equals("")){
         jButton5.setText("X");
@@ -405,7 +423,8 @@ int counter =0;
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-                  if(swap==1){
+                blockAIbtn();          
+        if(swap==1){
             if(jButton8.getText().equals("")){
         jButton8.setText("X");
         checkWinner();
@@ -431,7 +450,8 @@ int counter =0;
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-                 if(swap==1){
+                blockAIbtn();         
+        if(swap==1){
             if(jButton9.getText().equals("")){
         jButton9.setText("X");
         checkWinner();
@@ -457,7 +477,8 @@ int counter =0;
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-                  if(swap==1){
+                blockAIbtn();        
+        if(swap==1){
             if(jButton6.getText().equals("")){
         jButton6.setText("X");
         checkWinner();
@@ -483,7 +504,8 @@ int counter =0;
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-                if(swap==1){
+                blockAIbtn();       
+        if(swap==1){
             if(jButton1.getText().equals("")){
         jButton1.setText("X");
         checkWinner();
@@ -510,7 +532,8 @@ int counter =0;
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-                 if(swap==1){
+                blockAIbtn();       
+        if(swap==1){
             if(jButton2.getText().equals("")){
         jButton2.setText("X");
         checkWinner();
@@ -536,7 +559,8 @@ int counter =0;
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-                  if(swap==1){
+                blockAIbtn();        
+        if(swap==1){
             if(jButton3.getText().equals("")){
         jButton3.setText("X");
         checkWinner();
@@ -562,7 +586,8 @@ int counter =0;
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-                  if(swap==1){
+                blockAIbtn();          
+        if(swap==1){
             if(jButton4.getText().equals("")){
         jButton4.setText("X");
         checkWinner();
@@ -588,7 +613,8 @@ int counter =0;
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-                   if(swap==1){
+                blockAIbtn();          
+        if(swap==1){
             if(jButton7.getText().equals("")){
         jButton7.setText("X");
         checkWinner();
@@ -632,6 +658,7 @@ int counter =0;
        jButton8.setEnabled(true);
        jButton9.setEnabled(true);
        jTextField2.setEnabled(true);
+       OnAI.setEnabled(true);
        jButton1.setText("");
        jButton2.setText("");
        jButton3.setText("");
