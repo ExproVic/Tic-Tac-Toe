@@ -5,6 +5,7 @@
  */
 package TicToePag;
 
+import java.util.Random;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,10 +13,12 @@ import javax.swing.JOptionPane;
  * @author ExproVic
  */
 public class TicToe extends javax.swing.JFrame {
-
+int swap =0;
+int counter =0;
     public int checkWinner(){
    int winner = 0;
  int block=0;
+ counter=counter+1;
    if(jButton1.getText().equals("X")&&jButton2.getText().equals("X")&&jButton3.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
                    block=1;
@@ -74,19 +77,10 @@ public class TicToe extends javax.swing.JFrame {
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
                    block=1;
     }
-   if (!jButton1.getText().isEmpty()&&
-           !jButton2.getText().isEmpty()&&
-           !jButton3.getText().isEmpty()&&
-           !jButton4.getText().isEmpty()&&
-           !jButton5.getText().isEmpty()&&
-           !jButton6.getText().isEmpty()&&
-           !jButton7.getText().isEmpty()&&
-           !jButton8.getText().isEmpty()&&
-           !jButton9.getText().isEmpty()){JOptionPane.showMessageDialog(this, "Draw try again");
-                            block=1;
-}
-   
-   if(block==1){
+   if(counter==9&&block==0){
+        JOptionPane.showMessageDialog(this, "Draw try again!");
+    }
+  if(block==1){
        jButton1.setEnabled(false);
        jButton2.setEnabled(false);
        jButton3.setEnabled(false);
@@ -98,16 +92,98 @@ public class TicToe extends javax.swing.JFrame {
        jButton9.setEnabled(false);
        jTextField2.setEnabled(false);
    }
-   if(cout==1){
+  if(swap==1){jTextField2.setText(" ");  }else{
+   if(cout==0){
             jTextField2.setText("the X player's move");       
-        }else if(cout==0){
+        }else if(cout==1){
             jTextField2.setText("the O player's move"); 
-        }
-             
-             
-   
+        }}
+          
     return winner;
     };
+    int stopAI=0;
+    public int AI(){
+        
+        int turn=0;
+        if(stopAI<4){
+        while(turn==0){
+             Random random = new Random();
+        int randomNumber = random.nextInt(9) + 1;
+        switch (randomNumber) {
+             case 1:
+               if(jButton1.getText().equals("")){
+                   jButton1.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+             case 2:
+               if(jButton2.getText().equals("")){
+                   jButton2.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+             case 3:
+               if(jButton3.getText().equals("")){
+                   jButton3.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+            case 4:
+               if(jButton4.getText().equals("")){
+                   jButton4.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+            case 5:
+               if(jButton5.getText().equals("")){
+                   jButton5.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+             case 6:
+               if(jButton6.getText().equals("")){
+                   jButton6.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+             case 7:
+               if(jButton7.getText().equals("")){
+                   jButton7.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+            case 8:
+               if(jButton8.getText().equals("")){
+                   jButton8.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+             case 9:
+               if(jButton9.getText().equals("")){
+                   jButton9.setText("O");
+                   turn=1;
+                   stopAI=stopAI+1;
+               }
+                break;
+            default:
+                break;
+        }
+        }
+        
+        checkWinner();}
+        
+        System.out.println(stopAI);
+        
+        return 1;
+    }
     public TicToe() {
         initComponents();
         jTextField1.setEditable(false);
@@ -129,6 +205,7 @@ public class TicToe extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         btnReset = new javax.swing.JButton();
+        OnAI = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -220,6 +297,14 @@ public class TicToe extends javax.swing.JFrame {
             }
         });
 
+        OnAI.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        OnAI.setText("AI OFF");
+        OnAI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                OnAIActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -249,8 +334,10 @@ public class TicToe extends javax.swing.JFrame {
                                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(56, 56, 56)
-                        .addComponent(btnReset)))
-                .addGap(0, 295, Short.MAX_VALUE))
+                        .addComponent(btnReset)
+                        .addGap(42, 42, 42)
+                        .addComponent(OnAI)))
+                .addContainerGap(172, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,7 +362,8 @@ public class TicToe extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnReset))
+                    .addComponent(btnReset)
+                    .addComponent(OnAI))
                 .addGap(67, 67, 67))
         );
 
@@ -289,138 +377,240 @@ public class TicToe extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-         if(jButton5.getText().equals("")){
+           if(swap==1){
+            if(jButton5.getText().equals("")){
+        jButton5.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton5.getText().equals("")){
              if(cout==1){
         jButton5.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton5.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-         checkWinner();
+        } 
+           }
+            
 
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
-        // TODO add your handling code here:
-          if(jButton8.getText().equals("")){
+                  if(swap==1){
+            if(jButton8.getText().equals("")){
+        jButton8.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton8.getText().equals("")){
              if(cout==1){
         jButton8.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton8.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-          checkWinner();
+        } 
+           }
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
-        // TODO add your handling code here:
-          if(jButton9.getText().equals("")){
+                 if(swap==1){
+            if(jButton9.getText().equals("")){
+        jButton9.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton9.getText().equals("")){
              if(cout==1){
         jButton9.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton9.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-          checkWinner();
+        } 
+           }
     }//GEN-LAST:event_jButton9ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
-        // TODO add your handling code here:
-        if(jButton6.getText().equals("")){
+                  if(swap==1){
+            if(jButton6.getText().equals("")){
+        jButton6.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton6.getText().equals("")){
              if(cout==1){
         jButton6.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton6.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-        checkWinner();
+        } 
+           }
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-          if(jButton1.getText().equals("")){
+                if(swap==1){
+            if(jButton1.getText().equals("")){
+        jButton1.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton1.getText().equals("")){
              if(cout==1){
         jButton1.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton1.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-          checkWinner();
+        } 
+           }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-          if(jButton2.getText().equals("")){
+                 if(swap==1){
+            if(jButton2.getText().equals("")){
+        jButton2.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton2.getText().equals("")){
              if(cout==1){
         jButton2.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton2.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-          checkWinner();
+        } 
+           }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-          if(jButton3.getText().equals("")){
+                  if(swap==1){
+            if(jButton3.getText().equals("")){
+        jButton3.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton3.getText().equals("")){
              if(cout==1){
         jButton3.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton3.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-          checkWinner();
+        } 
+           }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-          if(jButton4.getText().equals("")){
+                  if(swap==1){
+            if(jButton4.getText().equals("")){
+        jButton4.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton4.getText().equals("")){
              if(cout==1){
         jButton4.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton4.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-          checkWinner();
+        } 
+           }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-         // TODO add your handling code here:
-           if(jButton7.getText().equals("")){
+                   if(swap==1){
+            if(jButton7.getText().equals("")){
+        jButton7.setText("X");
+        checkWinner();
+        cout=0;
+           AI();
+        }else{
+            JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
+        }}
+           else{
+              if(jButton7.getText().equals("")){
              if(cout==1){
         jButton7.setText("X");
+        checkWinner();
         cout=0;
-        }   else{
+        } else{
            jButton7.setText("O");
+           checkWinner();
             cout=1;}
         }else{
             JOptionPane.showMessageDialog(this, "This field is already taken! Please choose another", "Error", JOptionPane.ERROR_MESSAGE);
-        }
-           checkWinner();
+        } 
+           }
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
@@ -452,9 +642,25 @@ public class TicToe extends javax.swing.JFrame {
        jButton8.setText("");
        jButton9.setText("");
        jTextField2.setText("");
+       counter =0;
+       cout=1;
+       stopAI=0;
        
         
     }//GEN-LAST:event_btnResetActionPerformed
+
+    private void OnAIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OnAIActionPerformed
+        // TODO add your handling code here:
+      
+         if (OnAI.isSelected()) {
+                    OnAI.setText("AI ON");
+                    swap =1;
+                } else {
+                    OnAI.setText("AI OFF");
+                     swap =0;
+                }
+        
+    }//GEN-LAST:event_OnAIActionPerformed
 
     /**
      * @param args the command line arguments
@@ -492,6 +698,7 @@ public class TicToe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton OnAI;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
