@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
 public class TicToe extends javax.swing.JFrame {
 int swap =0;
 int counter =0;
+ int block=0;
     public int checkWinner(){
    int winner = 0;
- int block=0;
  counter=counter+1;
    if(jButton1.getText().equals("X")&&jButton2.getText().equals("X")&&jButton3.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
@@ -122,6 +122,7 @@ int counter =0;
     public int AI(){
         
         int turn=0;
+        if(block!=1){
         if(stopAI<4){
         while(turn==0){
              Random random = new Random();
@@ -194,8 +195,7 @@ int counter =0;
                 break;
         }
         }
-        
-        checkWinner();}      
+        checkWinner();}   }   
         return 1;
     }
     public TicToe() {
