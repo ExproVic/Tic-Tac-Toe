@@ -16,85 +16,137 @@ public class TicToe extends javax.swing.JFrame {
  int block=0;
 int swap =0;
 int counter =0;
+int ScoreXshow=0;
+int ScoreOshow=0;
     public int checkWinner(){
    int winner = 0;
  counter=counter+1;
    if(jButton1.getText().equals("X")&&jButton2.getText().equals("X")&&jButton3.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   ScoreXshow=ScoreXshow+1;
+                   String text = Integer.toString(ScoreXshow);
+                    ScoreXbtn.setText(text);
+                   
                    block=1;
                    OnAI.setEnabled(true);
    }else if(jButton4.getText().equals("X")&&jButton5.getText().equals("X")&&jButton6.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   ScoreXshow=ScoreXshow+1;
+                   String text = Integer.toString(ScoreXshow);
+                    ScoreXbtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }else if(jButton7.getText().equals("X")&&jButton8.getText().equals("X")&&jButton9.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   ScoreXshow=ScoreXshow+1;
+                   String text = Integer.toString(ScoreXshow);
+                    ScoreXbtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }else if(jButton1.getText().equals("X")&&jButton4.getText().equals("X")&&jButton7.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   ScoreXshow=ScoreXshow+1;
+                   String text = Integer.toString(ScoreXshow);
+                    ScoreXbtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if(jButton2.getText().equals("X")&&jButton5.getText().equals("X")&&jButton8.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   ScoreXshow=ScoreXshow+1;
+                   String text = Integer.toString(ScoreXshow);
+                    ScoreXbtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if(jButton3.getText().equals("X")&&jButton6.getText().equals("X")&&jButton9.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   ScoreXshow=ScoreXshow+1;
+                   String text = Integer.toString(ScoreXshow);
+                    ScoreXbtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if(jButton1.getText().equals("X")&&jButton5.getText().equals("X")&&jButton9.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   ScoreXshow=ScoreXshow+1;
+                   String text = Integer.toString(ScoreXshow);
+                    ScoreXbtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if(jButton3.getText().equals("X")&&jButton5.getText().equals("X")&&jButton7.getText().equals("X")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player X is WIN");
+                   ScoreXshow=ScoreXshow+1;
+                   String text = Integer.toString(ScoreXshow);
+                    ScoreXbtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if (jButton1.getText().equals("O")&&jButton2.getText().equals("O")&&jButton3.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   ScoreOshow=ScoreOshow+1;
+                   String text = Integer.toString(ScoreOshow);
+                    ScoreObtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
    }else if(jButton4.getText().equals("O")&&jButton5.getText().equals("O")&&jButton6.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   ScoreOshow=ScoreOshow+1;
+                   String text = Integer.toString(ScoreOshow);
+                    ScoreObtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }else if(jButton7.getText().equals("O")&&jButton8.getText().equals("O")&&jButton9.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   ScoreOshow=ScoreOshow+1;
+                   String text = Integer.toString(ScoreOshow);
+                    ScoreObtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }else if(jButton1.getText().equals("O")&&jButton4.getText().equals("O")&&jButton7.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   ScoreOshow=ScoreOshow+1;
+                   String text = Integer.toString(ScoreOshow);
+                    ScoreObtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if(jButton2.getText().equals("O")&&jButton5.getText().equals("O")&&jButton8.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   ScoreOshow=ScoreOshow+1;
+                   String text = Integer.toString(ScoreOshow);
+                    ScoreObtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if(jButton3.getText().equals("O")&&jButton6.getText().equals("O")&&jButton9.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   ScoreOshow=ScoreOshow+1;
+                   String text = Integer.toString(ScoreOshow);
+                    ScoreObtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if(jButton1.getText().equals("O")&&jButton5.getText().equals("O")&&jButton9.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   ScoreOshow=ScoreOshow+1;
+                   String text = Integer.toString(ScoreOshow);
+                    ScoreObtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    else if(jButton3.getText().equals("O")&&jButton5.getText().equals("O")&&jButton7.getText().equals("O")){
                    JOptionPane.showMessageDialog(this, "Congratulation Player O is WIN");
+                   ScoreOshow=ScoreOshow+1;
+                   String text = Integer.toString(ScoreOshow);
+                    ScoreObtn.setText(text);
                    block=1;
                    OnAI.setEnabled(true);
     }
    if(counter==9&&block==0){
         JOptionPane.showMessageDialog(this, "Draw try again!");
+        block=1;
         OnAI.setEnabled(true);
     }
   if(block==1){
@@ -201,6 +253,8 @@ int counter =0;
     public TicToe() {
         initComponents();
         jTextField1.setEditable(false);
+        jScoreX.setEditable(false);
+        jScoreX.setEditable(false);
     }
 public int blockAIbtn(){
      OnAI.setEnabled(false);
@@ -223,6 +277,10 @@ public int blockAIbtn(){
         jTextField2 = new javax.swing.JTextField();
         btnReset = new javax.swing.JButton();
         OnAI = new javax.swing.JToggleButton();
+        jScoreX = new javax.swing.JTextField();
+        ScoreObtn = new javax.swing.JButton();
+        ScoreXbtn = new javax.swing.JButton();
+        jScoreO = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -322,15 +380,36 @@ public int blockAIbtn(){
             }
         });
 
+        jScoreX.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jScoreX.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jScoreX.setText("Score X");
+        jScoreX.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jScoreXActionPerformed(evt);
+            }
+        });
+
+        ScoreObtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ScoreObtn.setText("0");
+
+        ScoreXbtn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ScoreXbtn.setText("0");
+
+        jScoreO.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jScoreO.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jScoreO.setText("Score O");
+        jScoreO.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jScoreOActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -350,25 +429,54 @@ public int blockAIbtn(){
                                     .addComponent(jButton6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
                                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addGap(56, 56, 56)
-                        .addComponent(btnReset)
-                        .addGap(42, 42, 42)
-                        .addComponent(OnAI)))
-                .addContainerGap(172, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(56, 56, 56)
+                                .addComponent(btnReset)
+                                .addGap(42, 42, 42))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(ScoreXbtn)
+                                .addGap(29, 29, 29)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(OnAI)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addComponent(ScoreObtn))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(jScoreX, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScoreO, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jScoreX, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScoreO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(ScoreXbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ScoreObtn, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
                     .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -690,6 +798,15 @@ public int blockAIbtn(){
         
     }//GEN-LAST:event_OnAIActionPerformed
 
+    private void jScoreXActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jScoreXActionPerformed
+        // TODO add your handling code here:
+         jScoreX.setEnabled(false);
+    }//GEN-LAST:event_jScoreXActionPerformed
+
+    private void jScoreOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jScoreOActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jScoreOActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -727,6 +844,8 @@ public int blockAIbtn(){
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton OnAI;
+    private javax.swing.JButton ScoreObtn;
+    private javax.swing.JButton ScoreXbtn;
     private javax.swing.JButton btnReset;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -737,6 +856,8 @@ public int blockAIbtn(){
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private javax.swing.JTextField jScoreO;
+    private javax.swing.JTextField jScoreX;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
