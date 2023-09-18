@@ -13,9 +13,9 @@ import javax.swing.JOptionPane;
  * @author ExproVic
  */
 public class TicToe extends javax.swing.JFrame {
+ int block=0;
 int swap =0;
 int counter =0;
- int block=0;
     public int checkWinner(){
    int winner = 0;
  counter=counter+1;
@@ -672,6 +672,7 @@ public int blockAIbtn(){
        counter =0;
        cout=1;
        stopAI=0;
+       block=0;
        
         
     }//GEN-LAST:event_btnResetActionPerformed
